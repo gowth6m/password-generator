@@ -27,14 +27,14 @@ OVERALL CSS
     --title-font-size: 6rem;
     --big-font-size: 2rem;
     --h2-font-size: 1.25rem;
-    --normal-font-size: 0.938rem;
+    --normal-font-size: 1.2rem;
   }
 @media screen and (min-width: 768px){
     :root{
         --title-font-size: 2.5rem;
         --big-font-size: 3.5rem;
         --h2-font-size: 2rem;
-        --normal-font-size: 1rem;
+        --normal-font-size: 1.2rem;
     }
 
     .title {
@@ -81,7 +81,7 @@ ul{
 
 .container-main {
     height: 100vh;
-    margin: auto;
+    margin: 0;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
@@ -89,49 +89,110 @@ ul{
 }
 
 /* MAIN BOX */
-.main-box {
-    position: absolute;
-    border: 5px solid var(--green);
-    width: 60vw;
-    height: 50vh;
-    margin-top: -25vh;
-    top: 50vh;
-    font-size: var(--h2-font-size);
-}
-
 .title {
-    position: absolute;
-    font-size: var(--title-font-size);
-    color: var(--white);
-}
-
-.password-display {
-    text-align: center;
-    margin: auto;
-    width: 100%;
+    color: var(--main-white);
     font-size: var(--big-font-size);
-    border: 5px solid var(--green);
-    background-color: var(--green);
-    /* color: var(--white); */
 }
 
-.password-setting {
-    margin-top: 20px;
-    font-size: var(--h2-font-size);
-    text-align: center;
+.pw-container {
+    background-color: var(--green);
+    margin: auto;
+    /* min-width: 400px; */
+    max-width: 800px;
+}
+
+.pw-header {
+    padding: 1rem;
+}
+
+.pw {
+    background-color: var(--main-bg-grey);
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    overflow: auto;
+}
+
+.pw button {
+    background-color: white;
+    border: none;
+    color: var(--main-black);
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    padding: 0.25rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(0, 20%);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    opacity: 0;
+}
+
+.pw:hover button {
+    opacity: 1;
+    transform: translate(0, 0%);
+}
+
+.pw-body {
+    padding: 0 1rem 1rem;
+}
+
+.form-control {
+    font-size: var(--normal-font-size);
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    margin: 0.75rem 0;
 }
 
 .generate {
-    margin-top: 20px;
-    border: 5px solid var(--white);
-    background-color: var(--green);
-    color: black;
-    width: auto;
-    font-size: var(--h2-font-size);
-    border-radius: 20px;
+    background-color: #FF784F;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    width: 100%;
 }
 
 .generate:hover {
-    background-color: var(--white);
-    cursor: pointer;
+    background-color: var(--main-bg-grey);
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+}
+
+input[type=number] {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 500px) {
+    .pw-container {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .form-control {
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        margin: 2.5rem 0;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .pw {
+        font-size: 1.1rem;
+    }
 }

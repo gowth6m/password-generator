@@ -11,15 +11,19 @@ OVERALL CSS
     --main-bg-grey: #222222;
     --main-bg-grey2: #171717;
     --main-pink: #E31B6D;
-    --main-white: #f8f8f8;
+    --main-white: #F0EFF4;
     --main-blue: #04C2C9;
 
     --black: #1F2232;
     --grey: #596475;
     --darkgrey: #3a424d;
-    --green: #64F58D;
-    --white: #f8f8f8;
+    --green: #6C9A8B;
+    --white: #F0EFF4;
     --gutter: 20px;
+
+    --pink: #DA4167;
+    --purple: #832161;
+    --darkPurple: #3D2645;
 }
 
 :root{
@@ -38,7 +42,7 @@ OVERALL CSS
     }
 
     .title {
-        color: var(--grey);
+        color: var(--pink);
     }
 }
 
@@ -90,15 +94,16 @@ ul{
 
 /* MAIN BOX */
 .title {
-    color: var(--main-white);
+    margin-top: 0;
+    color: var(--white);
     font-size: var(--big-font-size);
 }
 
 .pw-container {
-    background-color: var(--green);
+    background-color: var(--purple);
     margin: auto;
-    /* min-width: 400px; */
     max-width: 800px;
+    color: var(--white);
 }
 
 .pw-header {
@@ -106,7 +111,7 @@ ul{
 }
 
 .pw {
-    background-color: var(--main-bg-grey);
+    background-color: var(--darkPurple);
     display: flex;
     font-size: 1.5rem;
     align-items: center;
@@ -115,6 +120,7 @@ ul{
     position: relative;
     padding: 1rem;
     overflow: auto;
+    text-align: center;
 }
 
 .pw button {
@@ -144,14 +150,14 @@ ul{
 
 .form-control {
     font-size: var(--normal-font-size);
-    color: black;
+    color: var(--white);
     display: flex;
     justify-content: space-between;
     margin: 0.75rem 0;
 }
 
 .generate {
-    background-color: #FF784F;
+    background-color: var(--pink);
     border: none;
     color: var(--white);
     cursor: pointer;
@@ -182,7 +188,6 @@ input[type=number] {
     }
 
     .form-control {
-        color: black;
         display: flex;
         justify-content: space-between;
         margin: 2.5rem 0;
